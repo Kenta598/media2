@@ -1,0 +1,6 @@
+docker run -v /mnt/c/Users/imoga/ac/media2:/mnt/c/Users/imoga/ac/media2 --gpus all -it --rm tensorflow/tensorflow:latest-gpu
+pip install opencv-python
+pip install opencv-contrib-python
+apt-get install -y libgl1-mesa-dev
+pip install matplotlib
+pip3 install sklearn
