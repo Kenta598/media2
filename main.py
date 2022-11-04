@@ -63,10 +63,15 @@ x_train, x_test, y_train, y_test = train_test_split(X_train, Y_train, test_size=
 x_train, x_test = x_train / 255.0, x_test /255.0
 
 # ニューラルネットワークを構築
+base_model_avg = tf.keras.applications.vgg16.VGG16(
+    include_top = False, pooling = 'avg', input_shape = (300,300,3)
+)
+base_model.summary()
+
 model = tf.keras.models.Sequential([
-tf.keras.layers.Flatten(input_shape=(300, 300, 3)),
-tf.keras.layers.Dense(128, activation='relu'),
-tf.keras.layers.Dense(3, activation='softmax'),
+    base_model_avg,
+    tf.keras.layers.Dense(128, activation='relu'),
+    tf.keras.layers.Dense(3, activation='softmax'),
 ])
 
 ##推定
