@@ -4,3 +4,7 @@ pip install opencv-contrib-python
 apt-get install -y libgl1-mesa-dev
 pip install matplotlib
 pip3 install sklearn
+
+pip install pydot
+pip install pydotplus
+pip install graphviz
